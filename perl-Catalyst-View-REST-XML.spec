@@ -1,7 +1,7 @@
 %define realname Catalyst-View-REST-XML
 %define name	 perl-%{realname}
 %define version	 0.01
-%define release	 %mkrel 1
+%define release	 %mkrel 2
 
 Summary:	XML View Class
 Name:		%{name}
