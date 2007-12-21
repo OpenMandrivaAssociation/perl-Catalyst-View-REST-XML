@@ -19,6 +19,7 @@ BuildRequires:	perl
 BuildRequires:	perl-Catalyst >= 5
 BuildRequires:	perl(XML::Simple)
 BuildArch:	noarch
+Buildroot:	%{_tmppath}/%{name}-root
 
 %description
 This is the XML::Simple view class.
