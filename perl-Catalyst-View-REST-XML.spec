@@ -1,16 +1,16 @@
-%define realname Catalyst-View-REST-XML
-%define name	 perl-%{realname}
-%define version	 0.01
-%define release	 %mkrel 4
+%define upstream_name    Catalyst-View-REST-XML
+%define upstream_version 0.01
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	XML View Class
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
 License:	Artistic/GPL
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{realname}/
-Source:		%{realname}-%{version}.tar.bz2
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.bz2
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %else
@@ -19,13 +19,13 @@ BuildRequires:	perl
 BuildRequires:	perl-Catalyst >= 5
 BuildRequires:	perl(XML::Simple)
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-root
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This is the XML::Simple view class.
 
 %prep
-%setup -q -n %{realname}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
@@ -38,12 +38,11 @@ This is the XML::Simple view class.
 %{__rm} -rf %{buildroot}
 %makeinstall_std
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %files
 %defattr(-,root,root)
 %doc Changes README
 %{perl_vendorlib}/Catalyst/View/*
 %{_mandir}/*/*
-
-%clean
-rm -rf $RPM_BUILD_ROOT
-
