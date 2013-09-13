@@ -1,15 +1,15 @@
 %define upstream_name    Catalyst-View-REST-XML
-%define upstream_version 0.01
+%define upstream_version 0.02
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	1
 
 Summary:	XML View Class
 License:	Artistic/GPL
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
-Source0:	http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:	http://www.cpan.org/modules/by-module/Catalyst/Catalyst-View-REST-XML-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Catalyst)
@@ -33,7 +33,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %makeinstall_std
 
 %files
-%doc Changes README
+%doc Changes 
 %{perl_vendorlib}/Catalyst/View/*
 %{_mandir}/*/*
 
@@ -65,4 +65,5 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Thu Mar 30 2006 Rafael Garcia-Suarez <rgarciasuarez@mandriva.com> 0.01-1mdk
 - Initial mdv rpm
+
 
