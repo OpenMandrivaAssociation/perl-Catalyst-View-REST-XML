@@ -2,14 +2,14 @@
 %define upstream_version 0.02
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%{upstream_version}
+Release:	4
 
 Summary:	XML View Class
 License:	Artistic/GPL
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}/
-Source0:	http://www.cpan.org/modules/by-module/Catalyst/Catalyst-View-REST-XML-%{upstream_version}.tar.gz
+Url:		https://dev.catalyst.perl.org/repos/Catalyst/trunk/historical/Catalyst-View-REST-XML
+Source0:	https://cpan.metacpan.org/authors/id/B/BO/BOBTFISH/Catalyst-View-REST-XML-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
