@@ -1,15 +1,13 @@
 %define upstream_name    Catalyst-View-REST-XML
-%define upstream_version 0.02
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	4
+Version:	0.02
+Release:	5
 
 Summary:	XML View Class
 License:	Artistic/GPL
 Group:		Development/Perl
 Url:		https://dev.catalyst.perl.org/repos/Catalyst/trunk/historical/Catalyst-View-REST-XML
-Source0:	https://cpan.metacpan.org/authors/id/B/BO/BOBTFISH/Catalyst-View-REST-XML-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/B/BO/BOBTFISH/Catalyst-View-REST-XML-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -21,7 +19,7 @@ BuildArch:	noarch
 This is the XML::Simple view class.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -46,9 +44,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Wed Jul 29 2009 Jérôme Quelin <jquelin@mandriva.org> 0.10.0-1mdv2011.0
 + Revision: 402994
-- rebuild using %%perl_convert_version
-
-* Wed Jul 30 2008 Thierry Vignaud <tv@mandriva.org> 0.01-4mdv2009.0
+- rebuild using %0.02 Wed Jul 30 2008 Thierry Vignaud <tv@mandriva.org> 0.01-4mdv2009.0
 + Revision: 255592
 - rebuild
 
